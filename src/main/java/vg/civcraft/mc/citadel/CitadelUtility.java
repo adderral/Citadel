@@ -10,6 +10,7 @@ import vg.civcraft.mc.citadel.reinforcementtypes.ReinforcementType;
 import vg.civcraft.mc.civmodcore.inventory.items.ItemMap;
 import vg.civcraft.mc.namelayer.NameAPI;
 import vg.civcraft.mc.namelayer.group.Group;
+import org.bukkit.Sound;
 
 /**
  * Just a useful class with general and misplaced methods that can be called
@@ -145,6 +146,7 @@ public class CitadelUtility {
 		if (available < required) {
 			Citadel.getInstance().getStateManager().setState(player, null);
 			CitadelUtility.sendAndLog(player, ChatColor.RED, "You have no items left to reinforce with " + type.getName());
+			player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_BREAK, 1.0f, 1.0f);
 			return true;
 		}
 		Reinforcement newRein = ReinforcementLogic.callReinforcementCreationEvent(player, block, type, group);

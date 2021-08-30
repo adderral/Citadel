@@ -57,6 +57,10 @@
 			<id>civ-github-repo</id>
 			<url>https://raw.githubusercontent.com/CivClassic/artifacts/master/</url>
 		</repository>
+		<repository>
+			<id>civu-github-repo</id>
+			<url>https://raw.githubusercontent.com/CivUniverse/artifacts/master/</url>
+		</repository>
 	</repositories>
 
 </project>
